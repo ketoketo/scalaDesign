@@ -52,7 +52,7 @@ object List {
     if (n <= 0) l
     else l match {
       case Nil => Nil
-      case Cons(_, x) => x
+      case Cons(_, x) => drop(x, n-1)
     }
 
   def dropWhile[A](l: List[A], f: A => Boolean): List[A] = l match {
