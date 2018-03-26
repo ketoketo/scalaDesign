@@ -13,12 +13,18 @@ object List {
       case Cons(x, xs) => x + sum(xs)
     }
 
+  def sum2(ns: List[Int]): Int =
+    foldRight(ns, 0)((x,y) => x + y)
+
   def product(ds: List[Double]): Double =
     ds match {
       case Nil => 1.0
 //      case Cons(0.0, _) => 0.0
       case Cons(x, xs) => x * product(xs)
     }
+
+  def product2(ns: List[Double]): Double =
+    foldRight(ns, 1.0)(_ * _)
 
   def foldRight[A, B](as: List[A], z: B)(f: (A, B) => B): B =
     as match {
