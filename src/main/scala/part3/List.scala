@@ -102,4 +102,7 @@ object Exec extends App {
   val xs = List(1,2,3,4,5)
   val ex1 = List.dropWhile2(xs)(x => x < 4)
   println(ex1)
+
+  val fr = List.foldRight(List(1,2,3), Nil: List[Int])(Cons(_,_))
+  println(fr)
 }
